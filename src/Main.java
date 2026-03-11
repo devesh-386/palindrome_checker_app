@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -19,19 +21,37 @@ public class Main {
         // =============================
         // UC2: Hardcoded Palindrome Check
         // =============================
-        String word = "madam";  // hardcoded word
-        String reversed = "";
+        String hardcodedWord = "madam";  // hardcoded word
+        String reversedHardcoded = "";
 
-        // Reverse the word
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed += word.charAt(i);
+        for (int i = hardcodedWord.length() - 1; i >= 0; i--) {
+            reversedHardcoded += hardcodedWord.charAt(i);
         }
 
-        // Check palindrome
-        if (word.equalsIgnoreCase(reversed)) {
-            System.out.println("UC2 Result: \"" + word + "\" is a palindrome!");
+        if (hardcodedWord.equalsIgnoreCase(reversedHardcoded)) {
+            System.out.println("UC2 Result: \"" + hardcodedWord + "\" is a palindrome!");
         } else {
-            System.out.println("UC2 Result: \"" + word + "\" is NOT a palindrome.");
+            System.out.println("UC2 Result: \"" + hardcodedWord + "\" is NOT a palindrome.");
         }
+
+        // =============================
+        // UC3: Palindrome Check Using String Reverse
+        // =============================
+        Scanner sc = new Scanner(System.in);
+        System.out.print("UC3: Enter a word to check palindrome: ");
+        String input = sc.nextLine();
+
+        String reversedInput = "";
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversedInput += input.charAt(i);
+        }
+
+        if (input.equalsIgnoreCase(reversedInput)) {
+            System.out.println("UC3 Result: \"" + input + "\" is a palindrome!");
+        } else {
+            System.out.println("UC3 Result: \"" + input + "\" is NOT a palindrome.");
+        }
+
+        sc.close();
     }
 }
